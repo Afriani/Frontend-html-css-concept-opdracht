@@ -1,0 +1,605 @@
+/*////////////////////////////////////////////////////////////////////////
+Table of Contents:
+    1. Global Styles
+    2. Typografie
+    3. Areas
+        3.1 Header
+        3.2 Testimonial
+        3.3 Support
+        3.4 Faq
+        3.5 Footer
+////////////////////////////////////////////////////////////////////////*/
+/* CSS Reset*/
+
+/*Merriweather*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oleo+Script+Swash+Caps:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oleo+Script+Swash+Caps:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*////////////////////////
+    1. GLOBAL STYLE
+////////////////////////*/
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 100%;
+    }
+    .introduction h2 {
+        font-size: 1.2rem;
+    }
+    .introduction p {
+        font-size: 0.9rem;
+    }
+    .triangle-down, .triangle-up {
+        border-top-width: 30px;
+        border-bottom-width: 30px;
+    }
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /*FONT FAMILY*/
+    --heading-font: Merriweather;
+    --body-text-font: Roboto;
+
+    /*KLEUREN PALET*/
+    --paars: #5722CD; /* Primair paars */
+    --blauw: #4845E4; /* Primair blauw */
+    --roze: #ED4385; /* Accentkleur roze */
+    --wit: #FFFFFF;
+    /* Tekstkleur (standaard) */
+    --zwart: #0C0C0C;
+
+    /* Speciale effecten */
+    --lichtpaars: #F2F0FF; /* Voor grote zwevende woorden zoals "hello", "services" */
+
+    /* Achtergrondkleuren */
+    --lichtgrijs: #F3F6F9; /* Voor de achtergrond van de projecten */
+    --grijs: #7A7A7A; /* Voor de service-tegel tekst (donkerder grijs) */
+}
+
+/*////////////////////////
+    2. TYPOGRAPHY
+////////////////////////*/
+/* Triangle Decorations */
+.triangle-up-introduction {
+    position: absolute;
+    top: 344px;
+    left: 0;
+    width: 0;
+    height: 0;
+
+    border-right: 100vw solid transparent;
+    border-bottom: 50px solid var(--wit); /* or use a gradient below */
+    z-index: 0; /* Behind header */
+}
+
+.triangle-up-container {
+    border-top: 50px solid transparent;
+    border-bottom: 0 solid transparent;
+    border-left: 100vw solid var(--lichtgrijs);
+}
+
+.triangle-down-services {
+    border-left: 100vw solid transparent;
+    border-right: 0 solid transparent;
+    border-top: 50px solid var(--lichtgrijs);
+}
+
+.triangle-up-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vw;
+
+    background: linear-gradient(to right, #4a00e0, #8e2de2); /* purple-blue */
+    clip-path: polygon(0 100%, 0 0, 100% 100%);
+    z-index: 0;
+}
+
+/*////////////////////////
+    3. AREAS
+////////////////////////*/
+/*///////////// 3.1 Header /////////////*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 30px;
+    background: linear-gradient(to right, #4a00e0, #8e2de2);
+    color: var(--wit);
+    position: relative;
+    margin: auto;
+}
+
+.header-section {
+    background-color: var(--blauw);
+}
+
+nav {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: var(--wit);
+    font-weight: 500;
+}
+
+.container {
+    text-align: center;
+    margin: 0 auto;
+    color: var(--wit);
+    padding: 2rem 1rem;
+}
+
+.container p {
+    font-weight: 280;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: var(--roze);
+    color: var(--wit);
+    border: none;
+    border-radius: 25px;
+    box-shadow: 8px 5px 10px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 0.5rem;
+    text-align: center;
+    font-weight: 300;
+}
+
+button:hover {
+    background: linear-gradient(to right, #3a00b0, #7a1dcf);
+}
+
+.container p {
+    color: var(--wit);
+}
+
+.header-image {
+    text-align: center;
+}
+
+/* Witte icoon */
+.header-image img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 14px;
+}
+
+.page-title {
+    font-size: 30px;
+    padding: 40px 70px 25px 70px;
+    font-family: Merriweather;
+}
+
+div p {
+    font-size: 15px;
+    padding-bottom: 20px;
+}
+
+.navbar,
+p,
+.btn {
+    font-family: Roboto;
+}
+
+.header-image {
+    margin: 0;
+}
+
+
+/*///////////// 4. BODY /////////////*/
+
+/*///////////// 4.1 INTRODUCTION /////////////*/
+.introduction {
+    text-align: center;
+    font-weight: 600;
+    font-family: inherit;
+    padding: 40px 50px;
+}
+
+section {
+    position: relative;
+    overflow: hidden; /* hides any overflow from the background text */
+}
+
+.background-text-introduction {
+    position: absolute;
+    top: 9.5rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: rgba(128, 0, 128, 0.04); /* very light, like a watermark */
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 250px;
+    margin: 0.05rem auto;
+}
+
+.introduction {
+    position: relative;
+    z-index: 1;
+}
+
+.introduction h2 {
+    font-size: 17px;
+    margin: 20px;
+    color: var(--paars);
+    font-family: Merriweather;
+}
+
+.introduction .paragraph-small {
+    font-size: 7px;
+    padding-top: 40px;
+    color: var(--zwart);
+    font-weight: bold;
+}
+
+.paragraph-small a {
+    cursor: pointer;
+}
+
+/*///////////// 4.2 PROJECTS /////////////*/
+section > .projects {
+    position: relative;
+    z-index: 1;
+}
+
+/* Projects wrapper */
+.projects {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto; /* center the content */
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* space between articles */
+    position: relative;
+}
+
+.background-text-project {
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1); /* subtle white */
+    letter-spacing: 1rem;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 200px;
+    margin: 3rem auto;
+}
+
+.projects article,
+.projects h2,
+.projects p {
+    position: relative;
+    z-index: 1;
+}
+
+.image-wrapper {
+    flex-basis: 800px;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.image-wrapper img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 8px 20px 6px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    width: 30px;
+    margin-bottom: 1rem;
+}
+
+/* Container for all projects */
+.projects {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--lichtgrijs);
+    max-width: 100%;
+}
+
+/* Each article laid out as a row */
+article {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap:1rem;
+    text-align: center;
+}
+
+.article-1 {
+    margin: 8rem 5rem 0 3rem;
+}
+
+.article-2 {
+    margin: 0 3rem 0 3rem;
+}
+
+.article-3 {
+    margin: 0 3rem 6rem 3rem;
+}
+
+/* Alternate layout for article-2 (image on the left) */
+.article-2 {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/* Center only the text inside .main-article-* */
+.main-article-1,
+.main-article-2,
+.main-article-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: left; /* vertical centering */
+    text-align: left; /* optional: left text itself */
+    margin-top: 3rem;
+    margin-right: 3rem;
+    margin-left: 1rem;
+
+}
+
+.main-article-1 h2,
+.main-article-1 .icon,
+.main-article-1 .paragraph-small {
+    gap: 3rem;
+}
+
+.main-article-2 h2,
+.main-article-2 .icon,
+.main-article-2 .paragraph-small {
+    gap: 3rem;
+}
+
+.main-article-3 h2,
+.main-article-3 .icon,
+.main-article-3 .paragraph-small {
+    gap: 3rem;
+}
+
+article h2 {
+    font-family: Merriweather;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 1rem;
+}
+
+article p {
+    font-size: 8px;
+    font-family: Roboto;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.paragraph-small {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: var(--paars);
+    font-weight: 500;
+    font-size: 10px;
+}
+
+/*///////////// 4.3 SERVICES /////////////*/
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+.services {
+    flex: 1;
+    padding: 2rem; /*for card position in the service class*/
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.background-text-services {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    color: rgba(128, 0, 128, 0.04); /* very light, like a watermark */
+    letter-spacing: 0.1rem;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 100px;
+    margin: 0.05rem auto;
+}
+
+.main-services,
+.card,
+.card h2,
+.card p {
+    position: relative;
+    z-index: 2;
+}
+
+.main-services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    max-width: 100%;
+    margin: 5rem auto;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.25rem;
+    flex: 0 0 calc((100% - 3 * 1.5rem) / 3); /* 3 cards per row with 1.5rem gap between each */
+    box-sizing: border-box;
+    background-color: var(--wit);
+    padding: 20px;
+    box-shadow: 1px 1px 12px 0 rgb(203 201 201);
+    border: 1px solid var(--paars);
+    height: 10rem;
+    min-width: 11rem;
+}
+
+.card img {
+    width: 30px;
+    height: 30px;
+}
+
+.card h2 {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--paars);
+    font-family: inherit;
+}
+
+.card p {
+    font-size: 0.4rem;
+    line-height: 1.4;
+    font-family: inherit;
+}
+
+/*///////////// 4.4 CONTACT FORM /////////////*/
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    background: linear-gradient(to right, #4a00e0, #8e2de2);
+    padding: 10vh;
+    width: 100%;
+    margin: 4.4rem auto;
+}
+
+form h3, form p {
+    color: var(--wit);
+    text-align: center;
+}
+
+form h3{
+    color: var(--wit);
+    font-family: Merriweather;
+    font-size: 2rem;
+}
+
+form p {
+    font-family: Roboto;
+    color: var(--wit);
+    font-size: 0.7rem;
+}
+
+/* group label + input vertically */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 590px;
+}
+
+.form-group label {
+    color: var(--wit);
+    font-family: Roboto;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+    width: 600px;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Roboto;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* textarea specific styles */
+textarea {
+    height: 180px;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+    font-size: 16px;
+}
+
+/* submit button */
+input[type=submit] {
+    width: 150px;
+    background-color: var(--roze);
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: auto;
+}
+
+input[type=submit]:hover {
+    background-color: var(--blauw);
+}
+
+/*///////////// 5. FOOTER /////////////*/
+.footer {
+    background-color: var(--zwart);
+    color: var(--wit);
+    width: 100%;
+}
+
+.footer p {
+    font-size: 8px;
+    font-family: Roboto;
+    text-align: center;
+    padding: 0.5rem;
+}
